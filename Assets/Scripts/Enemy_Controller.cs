@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class Enemy_Controller : MonoBehaviour
 {
-   private Transform PlayerPos;
+   private Transform HousesPos;
+   private Transform EnemyPos;
    public float speed;
+   public float minDistance = 6f;
 
     void Start()
     {
-        PlayerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); //player in transformuna erisilecek
+        HousesPos = GameObject.FindGameObjectWithTag("Houses").GetComponent<Transform>(); //house in trans. erisilecek
+        EnemyPos = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>(); //enemy in trans. erisilecek
     }
 
-    
     void Update()
     {
-        transform.position = Vector2.MoveTowards(
-            transform.position,
-            PlayerPos.position,
-            speed * Time.deltaTime
+        float distance = Vector2.Distance(HousesPos.position, EnemyPos.position);
 
-        );
+        if(distance > minDistance){
+        transform.position = Vector2.MoveTowards(transform.position, HousesPos.position, speed * Time.deltaTime);
+        }
+       
     }
 }
