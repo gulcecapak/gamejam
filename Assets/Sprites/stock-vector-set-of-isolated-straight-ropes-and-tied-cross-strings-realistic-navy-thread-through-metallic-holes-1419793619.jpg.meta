@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5ec0ca9284b7c2f41b9de9f5cd1068b9
+guid: 5e44314cb031dcd4da9480ef8ee6f053
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: stock-vector-set-of-isolated-straight-ropes-and-tied-cross-strings-realistic-navy-thread-through-metallic-holes-1419793619_0
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 149
+        width: 522
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a39d0d2109046a4c8dd663c08ceb940
+      internalID: 2103576700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +147,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stock-vector-set-of-isolated-straight-ropes-and-tied-cross-strings-realistic-navy-thread-through-metallic-holes-1419793619_0: 2103576700
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
