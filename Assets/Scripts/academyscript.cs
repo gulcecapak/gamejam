@@ -44,10 +44,14 @@ public class academyscript : MonoBehaviour
             waterspeed = 1;
         }
 
+        if((academyfood<=0) && (academywater<=0)  )
+                {
+            Ahealth = Ahealth -( Time.deltaTime * 0.1f);
+        }
         
 
         Debug.Log(Ahealth);
-        if ((Ahealth<=0)||(academyfood<=0 && academywater<=0))
+        if ((Ahealth<=0))
         {
             SceneManager.LoadScene(0);
         }
@@ -55,7 +59,8 @@ public class academyscript : MonoBehaviour
 
     public static void Damageal(float value)
     {
-        Ahealth = Ahealth -( value/2);
+        
+        Ahealth = Ahealth-value;
     }
     
 }

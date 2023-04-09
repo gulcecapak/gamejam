@@ -8,6 +8,7 @@ TagManager:
   - Houses
   - bullet
   - Academy
+  - academi
   layers:
   - Default
   - TransparentFX

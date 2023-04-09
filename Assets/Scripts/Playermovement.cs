@@ -14,6 +14,8 @@ public class Playermovement : MonoBehaviour
     public float Health = 100f;
     public float Damage;
 
+    public static float gold;
+
     public static float Phealth;
     public static float Pdmage;
     AudioSource audioSource;
@@ -23,6 +25,7 @@ public class Playermovement : MonoBehaviour
     [SerializeField] private Transform tasatma;
     void Start()
     {
+        gold = 0;
         Phealth = Health;
         Pdmage = Damage;
         anim = GetComponent<Animator>();
@@ -30,7 +33,7 @@ public class Playermovement : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(Phealth); // player ex ise
+       
         if(Phealth<=0)
         {
             SceneManager.LoadScene(0);

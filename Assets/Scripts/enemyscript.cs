@@ -10,6 +10,9 @@ public class enemyscript : MonoBehaviour
     public float hEalth = 40f;
     public float enemydamage;
 
+    public float playerrange;
+    public float homerange;
+
     float curTime = 0;
     float nextDamage = 2f;
 
@@ -28,6 +31,8 @@ public class enemyscript : MonoBehaviour
 
         if (hEalth<=0)
         {
+            int random = Random.Range(5, 15);
+            Playermovement.gold += random;
             SpawnerController.EnemycOunt--;
             Destroy(this.gameObject);
         }
@@ -58,7 +63,7 @@ public class enemyscript : MonoBehaviour
         if (closestenemy.transform.position.x > gameObject.transform.position.x && !fRight)
             Flip();
 
-        if ((Vector2.Distance(transform.position, closestenemy.transform.position) > 4)  && (closestenemy.name != "Player"))
+        if ((Vector2.Distance(transform.position, closestenemy.transform.position) > homerange)  && (closestenemy.name != "Player"))
         {
             
             transform.position = Vector2.MoveTowards(transform.position, closestenemy.transform.position, speed * Time.deltaTime);
@@ -66,7 +71,7 @@ public class enemyscript : MonoBehaviour
         }
 
 
-     else   if ((Vector2.Distance(transform.position, closestenemy.transform.position) > 1.42f) &&( closestenemy.name == "Player"))
+     else   if ((Vector2.Distance(transform.position, closestenemy.transform.position) > playerrange) &&( closestenemy.name == "Player"))
         {
 
             transform.position = Vector2.MoveTowards(transform.position, closestenemy.transform.position, speed * Time.deltaTime);
@@ -106,8 +111,9 @@ public class enemyscript : MonoBehaviour
 
         }
 
-        else if(collision.gameObject.tag=="Academy")
+        else if(collision.gameObject.tag=="academi")
         {
+           
             if (curTime <= 0)
             {
 
@@ -140,8 +146,9 @@ public class enemyscript : MonoBehaviour
 
 
         }
-        else if (collision.gameObject.tag=="Academy")
+        else if (collision.gameObject.tag== "academi")
         {
+          
             if (curTime <= 0)
             {
 
