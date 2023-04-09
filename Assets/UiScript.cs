@@ -103,35 +103,54 @@ public class UiScript : MonoBehaviour
 
     public void AkademiHP()
     {
-        academyscript.Ahealth += 25;
-        Playermovement.gold -= 15;
+        if(Playermovement.gold-15 >=0)
+        {
+            academyscript.Ahealth += 25;
+            Playermovement.gold -= 15;
+        }
+        
     }
     public void GoblinHP()
     {
-        Playermovement.Phealth += 25;
-        Playermovement.gold -= 25;
+        if (Playermovement.gold - 25 >= 0)
+        {
+            Playermovement.Phealth += 25;
+            Playermovement.gold -= 25;
+        }
     }
 
     public void Speed()
     {
-        Playermovement.speed += 0.5f;
-        Playermovement.gold -= 15;
+            if (Playermovement.gold - 15 >= 0)
+            {
+                Playermovement.speed += 0.5f;
+                Playermovement.gold -= 15;
+            }
 
     }
     public void DmgArtis()
     {
-        Playermovement.Pdmage += 10;
-        Playermovement.gold -= 20;
+                if (Playermovement.gold - 20 >= 0)
+                {
+                    Playermovement.Pdmage += 10;
+                    Playermovement.gold -= 20;
+                }
     }
 
     public void Yemekartis()
     {
-        academyscript.academyfood += 50;
-        Playermovement.gold -= 10;
+                    if (Playermovement.gold - 10 >= 0)
+                    {
+                        academyscript.academyfood += 50;
+                        Playermovement.gold -= 10;
+                    }
     }
     public void SuArtis()
     {
-        academyscript.academywater += 50;
-        Playermovement.gold -= 10;
+                    if (Playermovement.gold - 10 >= 0)
+                    {
+                        academyscript.academywater += 50;
+                        Playermovement.gold -= 10;
+                    }
     }
 }
