@@ -16,6 +16,7 @@ public class Playermovement : MonoBehaviour
 
     public static float Phealth;
     public static float Pdmage;
+    AudioSource audioSource;
     
 
     [SerializeField] private GameObject tas;
@@ -25,10 +26,11 @@ public class Playermovement : MonoBehaviour
         Phealth = Health;
         Pdmage = Damage;
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); 
     }
     private void Update()
     {
-        Debug.Log(Phealth);
+        Debug.Log(Phealth); // player ex ise
         if(Phealth<=0)
         {
             SceneManager.LoadScene(0);
@@ -55,9 +57,8 @@ public class Playermovement : MonoBehaviour
         if ((cd <= 0) && (distanceclosestenemy < Range))
         {
             Instantiate(tas, tasatma.position, Quaternion.identity);
-
-
             cd = 3f;
+            audioSource.Play();
         }
     }
         void FixedUpdate()
