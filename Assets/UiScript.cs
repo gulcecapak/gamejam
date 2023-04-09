@@ -5,29 +5,31 @@ using TMPro;
 
 public class UiScript : MonoBehaviour
 {
-    private float healt;
+    
     private TextMeshProUGUI health;
     [SerializeField] GameObject healx;
 
-    private float academyhealth;
+    
     private TextMeshProUGUI ahealth;
     [SerializeField] GameObject ahealx;
 
-    private float academyfood;
+    
     private TextMeshProUGUI afood;
     [SerializeField] GameObject afoodx;
 
-    private float academywater;
+    
     private TextMeshProUGUI awater;
     [SerializeField] GameObject awaterx;
 
-    private float academylevel;
+    
     private TextMeshProUGUI alevel;
     [SerializeField] GameObject alevelx;
 
-    private float enemycount;
     private TextMeshProUGUI ecount;
     [SerializeField] GameObject ecountx;
+
+    private TextMeshProUGUI ecoin;
+    [SerializeField] GameObject ecoinx;
 
     void Start()
     {
@@ -37,30 +39,34 @@ public class UiScript : MonoBehaviour
         awater = awaterx.GetComponent<TextMeshProUGUI>();
         alevel = alevelx.GetComponent<TextMeshProUGUI>();
         ecount = ecountx.GetComponent<TextMeshProUGUI>();
+        ecoin = ecoinx.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healt = Playermovement.Phealth;
-        health.text =healt.ToString("0");
+        
+        health.text = Playermovement.Phealth.ToString("0");
 
-        academyhealth =academyscript.Ahealth;
-        ahealth.text = academyhealth.ToString("0");
+        
+        ahealth.text = academyscript.Ahealth.ToString("0");
 
-        academyfood = academyscript.academyfood;
-        afood.text = academyfood.ToString("0");
+        
+        afood.text = academyscript.academyfood.ToString("0");
 
-        academywater = academyscript.academywater;
-        awater.text = academywater.ToString("0");
+        
+        awater.text = academyscript.academywater.ToString("0");
 
-        academylevel = SpawnerController.levelimiz;
-        alevel.text = academylevel.ToString("0");
+       
+        alevel.text = SpawnerController.levelimiz.ToString("0");
 
-        enemycount = SpawnerController.EnemycOunt;
-        ecount.text = enemycount.ToString("0");
+       
+        ecount.text = SpawnerController.EnemycOunt.ToString("0");
 
-        if (academyhealth<=30)
+       
+        ecoin.text = Playermovement.gold.ToString("0");
+
+        if (academyscript.Ahealth <= 30)
         {
             ahealth.color = Color.red;
         }
@@ -69,7 +75,7 @@ public class UiScript : MonoBehaviour
             ahealth.color = Color.white;
         }
 
-        if (academyfood <= 30)
+        if (academyscript.academyfood <= 30)
         {
             afood.color = Color.red;
         }
@@ -77,7 +83,7 @@ public class UiScript : MonoBehaviour
         {
             afood.color = Color.white;
         }
-        if (academywater <= 30)
+        if (academyscript.academywater <= 30)
         {
             awater.color = Color.red;
         }
@@ -85,7 +91,7 @@ public class UiScript : MonoBehaviour
         {
             awater.color = Color.white;
         }
-        if (healt <= 30)
+        if (Playermovement.Phealth <= 30)
         {
             health.color = Color.red;
         }
@@ -93,5 +99,39 @@ public class UiScript : MonoBehaviour
         {
             health.color = Color.white;
         }
+    }
+
+    public void AkademiHP()
+    {
+        academyscript.Ahealth += 25;
+        Playermovement.gold -= 15;
+    }
+    public void GoblinHP()
+    {
+        Playermovement.Phealth += 25;
+        Playermovement.gold -= 25;
+    }
+
+    public void Speed()
+    {
+        Playermovement.speed += 0.5f;
+        Playermovement.gold -= 15;
+
+    }
+    public void DmgArtis()
+    {
+        Playermovement.Pdmage += 10;
+        Playermovement.gold -= 20;
+    }
+
+    public void Yemekartis()
+    {
+        academyscript.academyfood += 50;
+        Playermovement.gold -= 10;
+    }
+    public void SuArtis()
+    {
+        academyscript.academywater += 50;
+        Playermovement.gold -= 10;
     }
 }

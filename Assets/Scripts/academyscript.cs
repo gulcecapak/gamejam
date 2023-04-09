@@ -23,6 +23,19 @@ public class academyscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(academyfood>=100)
+        {
+            academyfood = 100;
+        }
+        if(academywater>=100)
+        {
+            academywater = 100;
+        }
+        if(Ahealth>=100)
+        {
+            Ahealth = 100;
+        }
+
         academyfood -= academyfood * 0.01f * foodspeed * Time.deltaTime ;
         academywater -= academywater * 0.02f*waterspeed*Time.deltaTime;
 

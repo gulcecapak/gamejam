@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Playermovement : MonoBehaviour
 {
-    public float speed;
+    public static float speed;
     private Animator anim;
     private bool facingr = true;
     public float cd = 3;
@@ -25,6 +25,7 @@ public class Playermovement : MonoBehaviour
     [SerializeField] private Transform tasatma;
     void Start()
     {
+        speed = 5;
         gold = 0;
         Phealth = Health;
         Pdmage = Damage;
@@ -33,6 +34,10 @@ public class Playermovement : MonoBehaviour
     }
     private void Update()
     {
+        if(Phealth>=100)
+        {
+            Phealth = 100;
+        }
        
         if(Phealth<=0)
         {
