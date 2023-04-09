@@ -308,7 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  Player: {fileID: 0}
+  hEalth: 40
+  enemydamage: 0
 --- !u!1001 &18762061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2077,7 +2078,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  Player: {fileID: 176638654}
+  hEalth: 40
+  enemydamage: 0
 --- !u!1001 &183734494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3425,7 +3427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  Player: {fileID: 0}
+  hEalth: 40
+  enemydamage: 0
 --- !u!1001 &256457314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21105,7 +21108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  Player: {fileID: 0}
+  hEalth: 40
+  enemydamage: 0
 --- !u!1001 &1214920996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22175,7 +22179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  Player: {fileID: 176638654}
+  hEalth: 40
+  enemydamage: 0
 --- !u!1001 &1327012919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23296,7 +23301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  Player: {fileID: 0}
+  hEalth: 40
+  enemydamage: 0
 --- !u!1001 &1441084130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72258,6 +72264,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Range
       value: 231
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639518572066783107, guid: 535229ccbefbff04783b14adc1e824a4,
+        type: 3}
+      propertyPath: Damage
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1639518572066783228, guid: 535229ccbefbff04783b14adc1e824a4,
         type: 3}
