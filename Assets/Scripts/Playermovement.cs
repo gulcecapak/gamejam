@@ -28,7 +28,7 @@ public class Playermovement : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(Phealth);
+        
         if(Phealth<=0)
         {
             SceneManager.LoadScene(0);

@@ -5,7 +5,8 @@ using UnityEngine;
 public class enemyscript : MonoBehaviour
 {
     public float speed;
-   
+
+    public bool fRight = true;
     public float hEalth = 40f;
     public float enemydamage;
 
@@ -22,7 +23,10 @@ public class enemyscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hEalth<=0)
+      
+
+
+        if (hEalth<=0)
         {
             Destroy(this.gameObject);
         }
@@ -47,6 +51,11 @@ public class enemyscript : MonoBehaviour
 
             }
         }
+
+        if (closestenemy.transform.position.x < gameObject.transform.position.x && fRight)
+            Flip();
+        if (closestenemy.transform.position.x > gameObject.transform.position.x && !fRight)
+            Flip();
 
         if ((Vector2.Distance(transform.position, closestenemy.transform.position) > 4)  && (closestenemy.name != "Player"))
         {
@@ -95,6 +104,19 @@ public class enemyscript : MonoBehaviour
         
 
         }
+
+        else if(collision.gameObject.tag=="Academy")
+        {
+            if (curTime <= 0)
+            {
+
+                academyscript.Damageal(enemydamage);
+
+
+
+                curTime = nextDamage;
+            }
+        }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -117,5 +139,27 @@ public class enemyscript : MonoBehaviour
 
 
         }
+        else if (collision.gameObject.tag=="Academy")
+        {
+            if (curTime <= 0)
+            {
+
+                academyscript.Damageal(enemydamage);
+
+
+
+                curTime = nextDamage;
+            }
+            else
+            {
+
+                curTime -= Time.deltaTime;
+            }
+        }
+    }
+    private void Flip()
+    {
+        fRight = !fRight;
+        transform.Rotate(Vector3.up * 180);
     }
 }
