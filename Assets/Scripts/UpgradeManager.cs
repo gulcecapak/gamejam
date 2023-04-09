@@ -12,4 +12,9 @@ public class UpgradeManager : MonoBehaviour
         upgradeImage.SetActive(true);
     }
 
+    public void UpgradeExitButtonClick()
+    {
+        upgradeImage.SetActive(false);
+    }
+
 }
