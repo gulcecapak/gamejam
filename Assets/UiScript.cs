@@ -21,12 +21,22 @@ public class UiScript : MonoBehaviour
     private TextMeshProUGUI awater;
     [SerializeField] GameObject awaterx;
 
+    private float academylevel;
+    private TextMeshProUGUI alevel;
+    [SerializeField] GameObject alevelx;
+
+    private float enemycount;
+    private TextMeshProUGUI ecount;
+    [SerializeField] GameObject ecountx;
+
     void Start()
     {
         health = healx.GetComponent<TextMeshProUGUI>();
         ahealth = ahealx.GetComponent<TextMeshProUGUI>();
         afood = afoodx.GetComponent<TextMeshProUGUI>();
         awater = awaterx.GetComponent<TextMeshProUGUI>();
+        alevel = alevelx.GetComponent<TextMeshProUGUI>();
+        ecount = ecountx.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -44,7 +54,13 @@ public class UiScript : MonoBehaviour
         academywater = academyscript.academywater;
         awater.text = academywater.ToString("0");
 
-        if(academyhealth<=30)
+        academylevel = SpawnerController.levelimiz;
+        alevel.text = academylevel.ToString("0");
+
+        enemycount = SpawnerController.EnemycOunt;
+        ecount.text = enemycount.ToString("0");
+
+        if (academyhealth<=30)
         {
             ahealth.color = Color.red;
         }

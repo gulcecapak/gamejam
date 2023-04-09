@@ -7,17 +7,20 @@ public class SpawnerController : MonoBehaviour
     public GameObject RealEnemyPrefab;
     public Transform[] SpawnPoints;
 
-    private int levelimiz;
+    public static int levelimiz;
+    
     public float cd = 5f;
 
     private int guncelrakip;
     private int maxrakip;
    
+    public static int EnemycOunt;
 
     void Start()
     {
         levelimiz = 1;
         guncelrakip = 0;
+        EnemycOunt = guncelrakip;
         maxrakip=(levelimiz*3)+1;
       
     }
@@ -30,7 +33,7 @@ public class SpawnerController : MonoBehaviour
             Spawnla();
         }
 
-        if(guncelrakip==maxrakip)
+        if((guncelrakip==maxrakip) && (EnemycOunt==0))
         {
             LevelUP();
         }
@@ -44,6 +47,7 @@ public class SpawnerController : MonoBehaviour
         int randPos = Random.Range(0, SpawnPoints.Length);
         GameObject newEnemy = Instantiate(RealEnemyPrefab, SpawnPoints[randPos].position, Quaternion.identity);
         guncelrakip++;
+        EnemycOunt++;
         cd = 1;
     }
          private void LevelUP()

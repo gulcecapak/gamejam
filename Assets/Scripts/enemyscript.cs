@@ -28,6 +28,7 @@ public class enemyscript : MonoBehaviour
 
         if (hEalth<=0)
         {
+            SpawnerController.EnemycOunt--;
             Destroy(this.gameObject);
         }
 
